@@ -64,7 +64,7 @@ function getMoviesById(result) {
 //refactoring(memperbaiki) menjadi lebih modular
 //get movie by Search
 function getFetch(keyword) {
-  return fetch("http://www.omdbapi.com/?apikey=1200a74c&s=" + keyword)
+  return fetch("https://www.omdbapi.com/?apikey=1200a74c&s=" + keyword)
     .then((res) => {
       //membuat error jika fetchnya gagal
       if (!res.ok) {
@@ -130,7 +130,7 @@ document.addEventListener("click", function (e) {
 
 //get movie by id (untuk show detail)
 function getFetchById(filmId) {
-  return fetch("http://www.omdbapi.com/?apikey=1200a74c&i=" + filmId)
+  return fetch("https://www.omdbapi.com/?apikey=1200a74c&i=" + filmId)
     .then((res) => {
       if (!res.ok) {
         throw new Error(res.statusText);
