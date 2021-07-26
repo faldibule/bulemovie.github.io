@@ -2,7 +2,7 @@
 function getMovies(movies) {
   return `
   <div class="col-md-4 my-5">
-    <div class="card">
+    <div class="card" data-aos="fade-right">
       <img class="card-img-top" src="${movies.Poster}" />
       <div class="card-body">
         <h5 class="card-title">${movies.Title}</h5>
