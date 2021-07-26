@@ -7,7 +7,7 @@ function getMovies(movies) {
       <div class="card-body">
         <h5 class="card-title">${movies.Title}</h5>
         <h6 class="text-muted">${movies.Year}</h6>
-        <a href="#" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary see-detail" data-id = "${movies.imdbID}">Show Detail</a>
+        <button type="button" class="btn btn-primary see-detail" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id = "${movies.imdbID}">Show Detail</button>
       </div>
     </div>
   </div>`;
@@ -120,10 +120,12 @@ searchInput.addEventListener("keyup", function (e) {
 
 
 //show detail
+
 //show detail
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("see-detail")) {
     const filmId = e.target.dataset.id;
+    console.log(filmId);
     fillShowDetail(filmId);
   }
 });
