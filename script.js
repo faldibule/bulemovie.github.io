@@ -1,8 +1,8 @@
 //function pendukung
-function getMovies(movies, delay) {
+function getMovies(movies, offset) {
   return `
   <div class="col-md-4 my-5">
-    <div class="card" data-aos="fade-right" data-aos-delay="${delay}">
+    <div class="card" data-aos="fade-right" data-aos-offset="${offset}">
       <img class="card-img-top" src="${movies.Poster}" />
       <div class="card-body">
         <h5 class="card-title">${movies.Title}</h5>
@@ -98,10 +98,9 @@ async function searchWithFetch() {
 // mengisi movie list
 function fillMovieList(result) {
   let isi = "";
-  let delay = 50;
+  const delay = 300;
   result.Search.forEach((movies) => {
     isi += getMovies(movies, delay);
-    delay += 30;
   });
   const movieList = document.querySelector("#movie-list");
   movieList.innerHTML = isi;
